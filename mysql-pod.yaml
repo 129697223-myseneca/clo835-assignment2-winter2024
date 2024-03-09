@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql
+  labels: 
+    name: mysql
+spec:
+  containers:
+  - name: mysql
+    image: 376672410739.dkr.ecr.us-east-1.amazonaws.com/clo835-assignment2/assign2-mysql
+    ports:
+      - containerPort: 3306
+    imagePullSecrets:
+      - name: assign2secret

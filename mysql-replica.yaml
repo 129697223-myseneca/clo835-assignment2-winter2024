@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mysql
+  namespace: mysql-ns
+  labels:
+    app: mysql
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - image: 376672410739.dkr.ecr.us-east-1.amazonaws.com/clo835-assignment2:assign2-mysql
+          name: mysql
+          ports:
+          - containerPort: 3306
+            protocol: TCP
+          env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: passwd123

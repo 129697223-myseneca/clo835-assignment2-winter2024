@@ -13,6 +13,10 @@ spec:
     - containerPort: 8080
       protocol: TCP
     env:
+    - name: DBHOST
+      value: 10.244.0.5
+    - name: DBUSER
+      value: root
     - name: DBPORT
       value: "3306"
     - name: DATABASE

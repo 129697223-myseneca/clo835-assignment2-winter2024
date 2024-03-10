@@ -4,7 +4,6 @@ metadata:
   name: webapp
   labels:
     app: employees
-    namespace: webapp    
 spec:
   type: NodePort
   ports:
